@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OH YEAH 🎉</title>
+        <style>
+            /* Background Styling */
+            body {
+                text-align: center;
+                background: linear-gradient(to right, #ff9a9e, #fad0c4);
+                font-family: 'Arial', sans-serif;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            /* Happy Text */
+            h1 {
+                font-size: 50px;
+                color: #ff4081;
+                text-shadow: 0 0 10px rgba(255, 64, 129, 0.8);
+                animation: popIn 1s ease-out;
+            }
+
+            /* Text Animation */
+            @keyframes popIn {
+                from {
+                    transform: scale(0.5);
+                    opacity: 0;
+                }
+                to {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+
+            /* Confetti Effect */
+            .confetti {
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: #fff;
+                opacity: 0.7;
+                animation: fall linear infinite;
+            }
+
+            @keyframes fall {
+                from {
+                    transform: translateY(-100vh) rotate(0);
+                }
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HAPPY HAPPY HAPPY 🎊</h1>
+
+        <script>
+            function createConfetti() {
+                for (let i = 0; i < 50; i++) {
+                    let confetti = document.createElement("div");
+                    confetti.classList.add("confetti");
+                    document.body.appendChild(confetti);
+
+                    confetti.style.left = Math.random() * 100 + "vw";
+                    confetti.style.animationDuration = (Math.random() * 2 + 3) + "s";
+                    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                }
+            }
+
+            createConfetti();
+        </script>
+    </body>
+</html>
